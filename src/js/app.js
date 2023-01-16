@@ -39,6 +39,29 @@ function render(variables = {}) {
     linkedin=`<a href="#"><i class="fab fa-linkedin">`;
   }
 
+  // INSTAGRAM
+  let instagram="";
+  if(variables.instagram){
+    instagram=`<a href="https://www.instagram.com/`+variables.instagram + `" target="_blank"><i class="fab fa-instagram">`; 
+  } else {
+    instagram=`<a href="#"><i class="fab fa-instragram">`;
+  }
+
+  // GITHUB
+  let github="";
+  if(variables.github){
+    github=`<a href="https://gist.github.com/`+variables.github + `" target="_blank"><i class="fab fa-github">`; 
+  } else {
+    github=`<a href="#"><i class="fab fa-github">`;
+  }
+
+    // TWITTER
+    let twitter="";
+    if(variables.twitter){
+      twitter=`<a href="https://www.twitter.com/`+variables.twitter + `" target="_blank"><i class="fab fa-twitter">`; 
+    } else {
+      twitter=`<a href="#"><i class="fab fa-twitter">`;
+    }
 
 
 
@@ -47,13 +70,13 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name ? variables.name : ""} ${variables.lastname ? variables.lastname : ""}</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h2>${variables.role ? variables.role : ""}</h2>
+          <h3>${variables.city ? variables.city : ""}, ${variables.country ? variables.country : ""}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
+            <li>${twitter}</li>
+            <li>${github}</li>
             <li>${linkedin}</li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li>${instagram}</li>
           </ul>
         </div>
     `;
